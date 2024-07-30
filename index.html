@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">Ekal.</div>
+    <nav class="button">
+      <ul>
+        <li>
+          <a class="button-a" href="#home">Home</a>
+        </li>
+        <li>
+          <a class="button-a" href="#skills">Skills</a>
+        </li>
+        <li>
+          <a class="button-a" href="#Project">Project</a>
+        </li>
+        <li>
+          <a class="button-a" href="#portofolio">Portofolio</a>
+        </li>
+        <li>
+          <a class="button-a" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="home" id="home">
+    <div class="home-left">
+      <div class="hello-it-s-me">Hello It’s Me</div>
+      <div class="haikal-idris">Haikal Idris</div>
+      <div class="typewriter">
+        <span class="text first-text">And I'm a </span>
+        <span class="text second-text"></span>
+      </div>
+      <div class="description">
+        <p class="description-p">Haloo saya <b>Haikal Idris</b>, bersekolah di <b>SMK PRESTASI PRIMA</b>. Saya cukup
+          ahli dibidang <i>Web Programming</i> dan <i>UI UX Design</i>. Cita-cita saya ingin menjadi <i><b>Frontend
+              Developer</b></i></p>
+      </div>
+      <div class="social">
+        <a href="https://www.x.com/ncay135">
+          <img src="icon/twitter.png" alt="Twitter" class="icon">
+        </a>
+        <a href="https://www.facebook.com/haikal.idris.52687">
+          <img src="icon/facebook.png" alt="Facebook" class="icon">
+        </a>
+        <a href="https://www.linkedin.com/">
+          <img src="icon/linkedin.png" alt="Linkedin" class="icon">
+        </a>
+        <a href="https://www.instagram.com/?whos.kal._">
+          <img src="icon/instagram.png" alt="Instagram" class="icon">
+        </a>
+      </div>
+      <a href="foto.jpeg" download="foto" class="download">Download CV</a>
+    </div>
+    <div class="home-right">
+        <video autoplay loop muted class="video-background">
+          <source src="videoplayback.mp4" type="video/mp4">
+        </video>
+        <img src="foto-nobg.png" class="foto" alt="A photo of Haikal Idris">
+    </div>
+  </div>
+  </div>
+
+  <script type="text/javascript">
+    const text = document.querySelector(".second-text");
+
+    const textLoad = () => {
+      setTimeout(() => {
+        text.textContent = "Student";
+      }, 0);
+      setTimeout(() => {
+        text.textContent = "Fronted Developer";
+      }, 4000);
+      setTimeout(() => {
+        text.textContent = "UI UX Designer";
+      }, 8000);
+    }
+
+    textLoad();
+    setInterval(textLoad, 12000);
+  </script>
+</body>
+
+</html>
