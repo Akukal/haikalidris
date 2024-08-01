@@ -215,12 +215,17 @@ body {
     position: relative;
     font-weight: 800;
     width: 150px;
-    padding:10px 10px;
-    border-radius: 30px;
+    padding-left: 158px;
+    padding-right: 258px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
     color: #18122b;
     box-shadow: 0px 0px 1px #01eeff;
     background-color: #01eeff;
+    align-items: center;
     text-align: center;
+    text-wrap: nowrap;
     transition: 0.2s ease-out;
   }
 
