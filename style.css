@@ -282,3 +282,30 @@ body {
         left: 0%;
     }
   }
+
+  body {
+      font-family: 'Outfit', 'Inter', 'Roboto Slab', 'Sen', sans-serif;
+      background-color: #18122b;
+    }
+    .typewriter .second-text::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #18122b;
+      border-left: 2px solid #01eeff;
+      animation: animate 4s steps(16) infinite;
+    }
+    @keyframes animate {
+      40%, 60% {
+        left: 100%;
+      }
+      100% {
+        left: 0%;
+      }
+    }
+    a, input, br, img {
+      user-select: none;
+    }
