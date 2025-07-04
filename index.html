@@ -1,112 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="globals.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haikal Idris | Web Developer & UI Designer</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
-<body class="bg-[#18122b]">
-  <header
-    class="sticky top-0 w-full h-[60px] flex items-center justify-between bg-[#18122b] transition-all duration-700 z-[50] px-[100px]">
-    <div class="font-['Roboto_Slab'] font-bold text-white text-2xl whitespace-nowrap">Ekal.</div>
-    <nav>
-      <ul class="flex list-none items-center gap-[30px]">
-        <li>
-          <a href="#home"
-            class="relative bg-[#18122b] text-white font-['Outfit'] font-extralight text-lg text-center px-2 py-1 border-b-2 border-transparent transition-all duration-300 hover:text-[#01eeff] hover:border-b-2 hover:border-[#01eeff] active:bg-[#01eeff] active:text-white active:rounded-full">Home</a>
-        </li>
-        <li>
-          <a href="#skills"
-            class="relative bg-[#18122b] text-white font-['Outfit'] font-extralight text-lg text-center px-2 py-1 border-b-2 border-transparent transition-all duration-300 hover:text-[#01eeff] hover:border-b-2 hover:border-[#01eeff] active:bg-[#01eeff] active:text-white active:rounded-full">Skills</a>
-        </li>
-        <li>
-          <a href="#Project"
-            class="relative bg-[#18122b] text-white font-['Outfit'] font-extralight text-lg text-center px-2 py-1 border-b-2 border-transparent transition-all duration-300 hover:text-[#01eeff] hover:border-b-2 hover:border-[#01eeff] active:bg-[#01eeff] active:text-white active:rounded-full">Project</a>
-        </li>
-        <li>
-          <a href="#portofolio"
-            class="relative bg-[#18122b] text-white font-['Outfit'] font-extralight text-lg text-center px-2 py-1 border-b-2 border-transparent transition-all duration-300 hover:text-[#01eeff] hover:border-b-2 hover:border-[#01eeff] active:bg-[#01eeff] active:text-white active:rounded-full">Portofolio</a>
-        </li>
-        <li>
-          <a href="#contact"
-            class="relative bg-[#18122b] text-white font-['Outfit'] font-extralight text-lg text-center px-2 py-1 border-b-2 border-transparent transition-all duration-300 hover:text-[#01eeff] hover:border-b-2 hover:border-[#01eeff] active:bg-[#01eeff] active:text-white active:rounded-full">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <div class="relative flex items-center justify-between px-[100px] my-[150px]" id="home">
-    <div class="relative flex flex-col justify-between w-[430px]">
-      <div class="relative font-['Outfit'] font-extrabold text-white text-[32px]">Hello It’s Me</div>
-      <div class="relative font-['Sen'] font-extrabold text-white text-[72px] whitespace-nowrap overflow-hidden">
-        Haikal Idris</div>
-      <div class="typewriter inline-block relative mt-2">
-        <span class="relative text-[32px] font-extrabold font-['Inter'] text-white">And I'm a </span>
-        <span
-          class="text second-text absolute left-[170px] text-[32px] font-extrabold font-['Inter'] text-[#01eeff] whitespace-nowrap overflow-hidden"></span>
+<body class="bg-[#1D1D1D] text-gray-300 font-['Outfit']">
+  <canvas id="neonCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- HEADER -->
+    <header id="header" class="flex justify-between items-center py-8">
+      <a href="#" class="text-white font-bold text-2xl">H.</a>
+      <nav>
+        <ul class="flex items-center space-x-8">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Me</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li>
+            <a href="#contact"
+              class="bg-white text-black font-semibold px-5 py-2 rounded-md hover:bg-gray-200 transition-colors duration-300">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="grid md:grid-cols-2 items-center pt-16 pb-24 border-b border-gray-800">
+        <!-- Left Text -->
+        <div class="space-y-6">
+          <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
+            My name is <br /><span class="text-gradient">Haikal Idris</span>.
+          </h1>
+          <div class="flex space-x-4 pt-4">
+            <a href="https://www.instagram.com/whos.kal._?igsh=YmlweGI2ZnVqOTB0" class="social-icon"><img
+                src="icon/instagram.png" alt="Instagram" /></a>
+            <a href="https://www.x.com/ncay135" class="social-icon"><img src="icon/twitter-x.png" alt="Twitter/X" /></a>
+            <a href="https://www.linkedin.com/" class="social-icon"><img src="icon/linkedin.png" alt="LinkedIn" /></a>
+            <a href="https://www.github.com/akukal" class="social-icon"><img src="icon/github.png" alt="GitHub" /></a>
+          </div>
+        </div>
+        <!-- Right Image -->
+        <div class="relative flex justify-center items-center mt-12 md:mt-0">
+          <div class="blob-container">
+            <img src="foto-nobg.png" alt="Haikal Idris Photo" class="profile-image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME SECTION -->
+      <section id="about" class="grid md:grid-cols-2 gap-16 items-center py-24">
+        <div>
+          <img src="haikal.jpeg" alt="Haikal Idris at work" class="rounded-lg w-full" />
+        </div>
+        <div class="space-y-5">
+          <h2 class="text-4xl font-bold text-white">About Me</h2>
+          <p class="text-lg">
+            Hello Stranger! 👋, my name is <strong>Haikal Idris</strong>. I am
+            a skilled web developer and UI designer with a burning passion for
+            creating seamless digital experiences.
+          </p>
+          <p class="text-gray-400">
+            I bring a unique blend of creativity and technical expertise to
+            every project. With great enthusiasm, I am ready to help bring
+            your ideas to life.
+          </p>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="py-24">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white">Skills</h2>
+          <p class="text-gray-400 mt-2">
+            Some of the latest technologies I use.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Skill Card -->
+          <div class="skill-card">
+            <img src="icon/html.webp" alt="HTML5" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">HTML5</h3>
+              <p class="text-xs text-gray-400">Markup Language</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/css.webp" alt="CSS3" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">CSS3</h3>
+              <p class="text-xs text-gray-400">Styling Language</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/js.webp" alt="JavaScript" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">JavaScript</h3>
+              <p class="text-xs text-gray-400">Front-End Logic</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/php.png" alt="PHP" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">PHP</h3>
+              <p class="text-xs text-gray-400">Back-End Development</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/ci.png" alt="CodeIgniter" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">CodeIgniter</h3>
+              <p class="text-xs text-gray-400">PHP Framework</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/laravel.png" alt="Laravel" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">Laravel</h3>
+              <p class="text-xs text-gray-400">PHP Framework</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/tailwind.png" alt="Tailwind CSS" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">Tailwind CSS</h3>
+              <p class="text-xs text-gray-400">CSS Framework</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="icon/figma.png" alt="Figma" class="h-8 w-8" />
+            <div>
+              <h3 class="font-semibold text-white">Figma</h3>
+              <p class="text-xs text-gray-400">UI/UX Design</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="py-24">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white">Projects</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card -->
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1" class="rounded-lg" />
+            <h3 class="font-semibold text-white mt-4">Portfolio Website</h3>
+          </div>
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Project+2" alt="Project 2" class="rounded-lg" />
+            <h3 class="font-semibold text-white mt-4">
+              E-Commerce UI Design
+            </h3>
+          </div>
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Project+3" alt="Project 3" class="rounded-lg" />
+            <h3 class="font-semibold text-white mt-4">
+              School Management System
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-24 border-t border-gray-800">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white">Get In Touch</h2>
+          <p class="text-gray-400 mt-2">
+            Have a question or a project? Send me a message!
+          </p>
+        </div>
+        <form action="https://formspree.io/f/xzzgwwpw" method="POST" id="contact-form"
+          class="max-w-2xl mx-auto bg-[#232323] rounded-2xl shadow-2xl p-10 border border-gray-700">
+          <input type="hidden" name="access_key" value="88523152-8ae0-4cc9-88f0-bbc2b2156266" />
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name"
+                class="form-input rounded-lg bg-[#181818] border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                required />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email"
+                class="form-input rounded-lg bg-[#181818] border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                required />
+            </div>
+          </div>
+          <div class="mt-6">
+            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject"
+              class="form-input w-full form-input rounded-lg bg-[#181818] border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+              required />
+          </div>
+          <div class="mt-6">
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message"
+              class="form-input w-full form-input rounded-lg bg-[#181818] border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+              required></textarea>
+          </div>
+          <div class="text-center mt-8">
+            <button type="submit"
+              class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-10 py-3 rounded-lg shadow-lg border border-blue-400 hover:from-blue-600 hover:to-purple-700 hover:border-purple-500 transition-all duration-300 flex items-center justify-center gap-2 mx-auto outline-none focus:ring-2 focus:ring-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z" />
+              </svg>
+              Send Message
+            </button>
+          </div>
+          <div id="form-result" class="text-center mt-4 text-sm"></div>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="flex justify-between items-center py-8 border-t border-gray-800">
+      <p class="text-gray-500">© 2024 Akukal. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="https://www.instagram.com/whos.kal._?igsh=YmlweGI2ZnVqOTB0" class="social-icon-footer"><img
+            src="icon/instagram.png" alt="Instagram" /></a>
+        <a href="https://www.x.com/ncay135" class="social-icon-footer"><img src="icon/twitter-x.png"
+            alt="Twitter/X" /></a>
+        <a href="https://www.linkedin.com/" class="social-icon-footer"><img src="icon/linkedin.png"
+            alt="LinkedIn" /></a>
+        <a href="https://www.github.com/akukal" class="social-icon-footer"><img src="icon/github.png"
+            alt="GitHub" /></a>
       </div>
-      <div class="relative font-['Outfit'] text-white mt-4">
-        <p>Haloo saya <b>Haikal Idris</b>, bersekolah di <b>SMK PRESTASI PRIMA</b>. Saya cukup
-          ahli dibidang <i>Web Programming</i> dan <i>UI UX Design</i>. Cita-cita saya ingin menjadi
-          <i><b>Frontend
-              Developer</b></i>
-        </p>
-      </div>
-      <div class="py-5 flex">
-        <a href="https://www.x.com/ncay135">
-          <img src="icon/twitter.png" alt="Twitter"
-            class="icon relative h-[45px] w-auto text-[#01eeff] p-1 rounded-full border-2 border-transparent mr-2 transition-all duration-700 hover:border-[#01eeff]" />
-        </a>
-        <a href="https://www.facebook.com/haikal.idris.52687">
-          <img src="icon/facebook.png" alt="Facebook"
-            class="icon relative h-[45px] w-auto text-[#01eeff] p-1 rounded-full border-2 border-transparent mr-2 transition-all duration-700 hover:border-[#01eeff]" />
-        </a>
-        <a href="https://www.linkedin.com/">
-          <img src="icon/linkedin.png" alt="Linkedin"
-            class="icon relative h-[45px] w-auto text-[#01eeff] p-1 rounded-full border-2 border-transparent mr-2 transition-all duration-700 hover:border-[#01eeff]" />
-        </a>
-        <a href="https://www.instagram.com/whos.kal._?igsh=YmlweGI2ZnVqOTB0">
-          <img src="icon/instagram.png" alt="Instagram"
-            class="icon relative h-[45px] w-auto text-[#01eeff] p-1 rounded-full border-2 border-transparent mr-2 transition-all duration-700 hover:border-[#01eeff]" />
-        </a>
-      </div>
-      <a href="foto.jpeg" download="foto"
-        class="no-underline font-['Outfit'] font-extrabold w-[150px] px-[158px] py-[10px] rounded-[15px] text-[#18122b] shadow-sm bg-[#01eeff] text-center whitespace-nowrap transition-all duration-200 hover:shadow-[0_0_30px_#01eeff]">Download
-        CV</a>
-    </div>
-    <div
-      class="relative flex justify-center items-center rounded-[30px] shadow-[0_0_50px_1px_#01eeff5f] transition-all duration-1000 hover:shadow-[0_0_100px_15px_#01eeff5f]">
-      <video autoplay loop muted class="relative z-10 w-[500px] h-[450px] object-cover rounded-[30px]"
-        style="mix-blend-mode:screen;">
-        <source src="videoplayback.mp4" type="video/mp4">
-      </video>
-      <img src="foto-nobg.png" class="absolute w-auto h-[450px] z-20" alt="A photo of Haikal Idris">
-    </div>
+    </footer>
   </div>
-  <script>
-    const text = document.querySelector(".second-text");
-    const textLoad = () => {
-      setTimeout(() => {
-        text.textContent = "Student";
-      }, 0);
-      setTimeout(() => {
-        text.textContent = "Fronted Developer";
-      }, 4000);
-      setTimeout(() => {
-        text.textContent = "UI UX Designer";
-      }, 8000);
-    }
-    textLoad();
-    setInterval(textLoad, 12000);
-  </script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>
