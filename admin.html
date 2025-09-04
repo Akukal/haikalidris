@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Upload Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1D1D1D] text-gray-300 font-['Outfit'] min-h-screen flex items-center justify-center">
+
+  <div class="bg-[#232323] p-10 rounded-2xl shadow-xl w-full max-w-lg border border-gray-700">
+    <h1 class="text-3xl font-bold text-white mb-6">Upload New Project</h1>
+
+    <form id="projectForm" class="space-y-5">
+      <div>
+        <label class="block text-sm mb-1">Title</label>
+        <input type="text" id="title" required
+          class="w-full p-3 rounded-lg bg-[#181818] border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none" />
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Description</label>
+        <textarea id="description" rows="3"
+          class="w-full p-3 rounded-lg bg-[#181818] border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Image URL</label>
+        <input type="url" id="image_url"
+          class="w-full p-3 rounded-lg bg-[#181818] border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none" />
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Project Link</label>
+        <input type="url" id="link_url"
+          class="w-full p-3 rounded-lg bg-[#181818] border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none" />
+      </div>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-3 rounded-lg font-semibold text-white hover:from-blue-600 hover:to-purple-700 transition">
+        Upload Project
+      </button>
+    </form>
+
+    <p id="msg" class="text-center mt-4 text-green-400"></p>
+  </div>
+
+  <script>
+    document.getElementById("projectForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const image_url = document.getElementById("image_url").value;
+      const link_url = document.getElementById("link_url").value;
+
+      const res = await fetch("functions/create-project", {
+        method: "POST",
+        body: JSON.stringify({ title, description, image_url, link_url })
+      });
+
+      const data = await res.json();
+      document.getElementById("msg").textContent = "✅ Project uploaded: " + data.title;
+      document.getElementById("projectForm").reset();
+    });
+  </script>
+</body>
+</html>

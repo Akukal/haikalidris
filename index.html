@@ -161,26 +161,27 @@
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-white">Projects</h2>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project Card -->
-          <div class="project-card">
-            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+1" alt="Project 1" class="rounded-lg" />
-            <h3 class="font-semibold text-white mt-4">Portfolio Website</h3>
-          </div>
-          <div class="project-card">
-            <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Project+2" alt="Project 2" class="rounded-lg" />
-            <h3 class="font-semibold text-white mt-4">
-              E-Commerce UI Design
-            </h3>
-          </div>
-          <div class="project-card">
-            <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Project+3" alt="Project 3" class="rounded-lg" />
-            <h3 class="font-semibold text-white mt-4">
-              School Management System
-            </h3>
-          </div>
-        </div>
+        <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
       </section>
+
+      <script>
+        async function loadProjects() {
+          const res = await fetch("functions/get-projects");
+          const projects = await res.json();
+
+          const container = document.getElementById("projects-container");
+          container.innerHTML = projects.map(p => `
+            <div class="project-card bg-[#232323] rounded-xl p-4 border border-gray-700 hover:border-blue-500 transition-all">
+              <img src="${p.image_url}" alt="${p.title}" class="rounded-lg w-full h-48 object-cover">
+              <h3 class="font-semibold text-white mt-4">${p.title}</h3>
+              <p class="text-gray-400 text-sm mt-2">${p.description || ""}</p>
+              ${p.link_url ? `<a href="${p.link_url}" target="_blank" class="text-blue-400 mt-3 inline-block hover:underline">View Project</a>` : ""}
+            </div>
+          `).join("");
+        }
+
+        loadProjects();
+      </script>
 
       <!-- CONTACT SECTION -->
       <section id="contact" class="py-24 border-t border-gray-800">
