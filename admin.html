@@ -53,7 +53,7 @@
       const image_url = document.getElementById("image_url").value;
       const link_url = document.getElementById("link_url").value;
 
-      const res = await fetch("functions/create-project", {
+      const res = await fetch("/.netlify/functions/create-project", {
         method: "POST",
         body: JSON.stringify({ title, description, image_url, link_url })
       });
